@@ -1,11 +1,22 @@
-﻿<!DOCTYPE html>
+﻿@using System.Threading.Tasks
+@using AbpCompanyName.AbpProjectName.Products.Dtos
+@model Abp.Application.Services.Dto.ListResultOutput<ProductDto>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>AbpProjectName</title>
 </head>
 <body>
-    <h2>@L("HelloWorld")! @ViewBag.Number</h2>
+    <h2>@L("HelloWorld")! @L("OurProducts"):</h2>
+
+    <ul>
+        @foreach (var product in Model.Items)
+        {
+            <li>@product.Name - $@product.Price</li>
+        }
+    </ul>
+
     <h3>@L("ChangeLanguage"):</h3>
     <ul>
         @foreach (var languageInfo in LocalizationManager.GetAllLanguages())

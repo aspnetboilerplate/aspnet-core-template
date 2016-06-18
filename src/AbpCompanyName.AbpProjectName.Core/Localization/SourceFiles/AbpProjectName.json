@@ -2,6 +2,7 @@
   "culture": "en",
   "texts": {
     "HelloWorld": "Hello World!",
-    "ChangeLanguage":  "Change language" 
+    "ChangeLanguage": "Change language",
+    "OurProducts": "Our products" 
   }
 }

@@ -1,22 +1,22 @@
 using Abp.AspNetCore.Mvc.Controllers;
-using AbpCompanyName.AbpProjectName.Web.Services;
+using AbpCompanyName.AbpProjectName.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
     public class HomeController : AbpController
     {
-        private readonly MyService _myService;
+        private readonly IProductAppService _productAppService;
 
-        public HomeController(MyService myService)
+        public HomeController(IProductAppService productAppService)
         {
-            _myService = myService;
+            _productAppService = productAppService;
         }
 
         public IActionResult Index()
         {
-            ViewBag.Number = _myService.GetValue();
-            return View();
+            var model = _productAppService.GetAllProducts();
+            return View(model);
         }
     }
 }

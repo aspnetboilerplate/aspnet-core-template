@@ -2,6 +2,7 @@
   "culture": "tr",
   "texts": {
     "HelloWorld": "Merhaba Dünya!",
-    "ChangeLanguage": "Dil değiştir"
+    "ChangeLanguage": "Dil değiştir",
+    "OurProducts": "Ürünlerimiz"
   }
 }
