@@ -4,7 +4,7 @@ using Abp.Modules;
 
 namespace AbpCompanyName.AbpProjectName.Web
 {
-    [DependsOn(typeof(AbpAspNetCoreModule))]
+    [DependsOn(typeof(AbpProjectNameCoreModule), typeof(AbpAspNetCoreModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
         public override void PreInitialize()

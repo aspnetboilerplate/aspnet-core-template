@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0.0.0-*",
+
+  "dependencies": {
+    "Abp": "0.9.4.0-*"
+  },
+
+  "frameworks": {
+    "net452": {
+    }
+  },
+
+  "buildOptions": {
+    "embed": {
+      "include": [
+        "Localization/SourceFiles/*.json"
+      ]
+    }
+  }
+}

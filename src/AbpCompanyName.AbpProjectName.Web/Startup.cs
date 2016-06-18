@@ -1,12 +1,17 @@
 ﻿using System;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc.Filters;
+using Abp.AspNetCore.Mvc.Auditing;
+using Abp.AspNetCore.Mvc.Authorization;
+using Abp.AspNetCore.Mvc.ExceptionHandling;
+using Abp.AspNetCore.Mvc.Results;
+using Abp.AspNetCore.Mvc.Validation;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
@@ -17,10 +22,17 @@ namespace AbpCompanyName.AbpProjectName.Web
 {
     public class Startup : AbpStartup
     {
-        public Startup(IHostingEnvironment env, bool initialize = true)
-            : base(env, initialize)
+        public IConfigurationRoot Configuration { get; }
+
+        public Startup(IHostingEnvironment env)
+            : base(env)
         {
-             
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         protected override void InitializeAbp()
@@ -38,14 +50,18 @@ namespace AbpCompanyName.AbpProjectName.Web
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
+            //services.AddDbContext<MyDbContext>(
+            //    options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
+            //);
+
             // Add framework services.
             services.AddMvc(options =>
             {
-                options.Filters.Add(typeof(AbpAuthorizationFilter));
-                options.Filters.Add(typeof(AbpExeptionFilter));
-                options.Filters.Add(typeof(AbpResultFilter));
-
-                //TODO: InputFotmatter!
+                options.Filters.AddService(typeof(AbpAuthorizationFilter));
+                options.Filters.AddService(typeof(AbpAuditActionFilter));
+                options.Filters.AddService(typeof(AbpValidationActionFilter));
+                options.Filters.AddService(typeof(AbpExceptionFilter));
+                options.Filters.AddService(typeof(AbpResultFilter));
 
                 options.OutputFormatters.Add(new JsonOutputFormatter(
                     new JsonSerializerSettings
@@ -55,13 +71,21 @@ namespace AbpCompanyName.AbpProjectName.Web
 
             }).AddControllersAsServices();
 
-
             return base.ConfigureServices(services);
         }
 
         public override void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             base.Configure(app, env, loggerFactory);
+
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
 
             app.UseStaticFiles();
 
