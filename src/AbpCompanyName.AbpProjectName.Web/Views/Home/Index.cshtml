@@ -2,9 +2,25 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>AbpProjectName</title>
 </head>
 <body>
-    <p>HELLO WORLD from ASP.NET CORE! @ViewBag.Number</p>
+    <h2>@L("HelloWorld")! @ViewBag.Number</h2>
+    <h3>@L("ChangeLanguage"):</h3>
+    <ul>
+        @foreach (var languageInfo in LocalizationManager.GetAllLanguages())
+        {
+            <li>
+                @if (LocalizationManager.CurrentLanguage.Name == languageInfo.Name)
+                {
+                    <span class="text-muted">@languageInfo.DisplayName</span>
+                }
+                else
+                {
+                    <a href="/AbpLocalization/ChangeCulture?cultureName=@languageInfo.Name">@languageInfo.DisplayName</a>
+                }
+            </li>
+        }
+    </ul>
 </body>
 </html>

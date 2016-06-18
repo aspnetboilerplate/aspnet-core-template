@@ -1,6 +1,7 @@
 ﻿{
   "culture": "en",
   "texts": {
-    "HelloWorld": "Hello World!"
+    "HelloWorld": "Hello World!",
+    "ChangeLanguage":  "Change language" 
   }
 }

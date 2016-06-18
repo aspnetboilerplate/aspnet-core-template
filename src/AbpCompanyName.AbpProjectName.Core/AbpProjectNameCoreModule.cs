@@ -16,7 +16,7 @@ namespace AbpCompanyName.AbpProjectName
             Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe"));
 
             Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource("AbpAspNetCoreDemoModule",
+                new DictionaryBasedLocalizationSource(AbpProjectNameConsts.LocalizationSourceName,
                     new JsonEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
                         "AbpCompanyName.AbpProjectName.Core.Localization.SourceFiles"
