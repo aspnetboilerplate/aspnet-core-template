@@ -3,11 +3,32 @@
 
   "dependencies": {
     "Abp.EntityFrameworkCore": "0.9.4",
-    "AbpCompanyName.AbpProjectName.Core": "1.0.0.0-*"
+    "AbpCompanyName.AbpProjectName.Core": "1.0.0.0-*",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-final",
+      "type": "build"
+    }
+  },
+
+  "tools": {
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview1-final",
+      "imports": [
+        "portable-net45+win8+dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true
   },
 
   "frameworks": {
     "net452": {
+      "imports": "portable-net451+win8",
+      "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
     }
   }
 }

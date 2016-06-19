@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Abp.AspNetCore.Mvc.Controllers;
 using AbpCompanyName.AbpProjectName.Products;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,9 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             _productAppService = productAppService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var model = _productAppService.GetAllProducts();
+            var model = await _productAppService.GetAllProducts();
             return View(model);
         }
     }

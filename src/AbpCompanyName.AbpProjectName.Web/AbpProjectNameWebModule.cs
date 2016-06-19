@@ -1,10 +1,14 @@
 ﻿using System.Reflection;
 using Abp.AspNetCore;
 using Abp.Modules;
+using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 
 namespace AbpCompanyName.AbpProjectName.Web
 {
-    [DependsOn(typeof(AbpProjectNameApplicationModule), typeof(AbpAspNetCoreModule))]
+    [DependsOn(
+        typeof(AbpProjectNameApplicationModule), 
+        typeof(AbpProjectNameEntityFrameworkCoreModule), 
+        typeof(AbpAspNetCoreModule))]
     public class AbpProjectNameWebModule : AbpModule
     {
         public override void PreInitialize()

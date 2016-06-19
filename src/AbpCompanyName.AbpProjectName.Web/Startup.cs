@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Mvc.Auditing;
 using Abp.AspNetCore.Mvc.Authorization;
@@ -6,11 +7,13 @@ using Abp.AspNetCore.Mvc.ExceptionHandling;
 using Abp.AspNetCore.Mvc.Results;
 using Abp.AspNetCore.Mvc.Validation;
 using Abp.Configuration.Startup;
+using Abp.Localization;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +23,10 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Abp.Dependency;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AbpCompanyName.AbpProjectName.Web
 {

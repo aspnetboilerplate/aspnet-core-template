@@ -4,7 +4,9 @@ using Abp.Modules;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
-    [DependsOn(typeof(AbpProjectNameCoreModule), typeof(AbpEntityFrameworkCoreModule))]
+    [DependsOn(
+        typeof(AbpProjectNameCoreModule), 
+        typeof(AbpEntityFrameworkCoreModule))]
     public class AbpProjectNameEntityFrameworkCoreModule : AbpModule
     {
         public override void PreInitialize()
