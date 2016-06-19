@@ -7,6 +7,7 @@ using ASP.NET Core and EntityFramework Core.
 
 * Visual Studio 2015
 * ASP.NET Core RC2 (Download here: https://go.microsoft.com/fwlink/?LinkId=798481)
+* SQL Server
 
 ## How To Run
 
