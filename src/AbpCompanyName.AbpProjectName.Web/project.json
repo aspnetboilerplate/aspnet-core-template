@@ -24,16 +24,16 @@
       "version": "1.0.0-preview1-final",
       "type": "build"
     },
-    "Abp.EntityFrameworkCore": "0.9.4.0-*",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final",
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview1-final",
       "type": "build"
     },
     "Castle.Windsor-log4net": "3.3.0",
-    "Abp.AspNetCore": "0.9.4",
     "AbpCompanyName.AbpProjectName.Application": "1.0.0.0-*",
-    "AbpCompanyName.AbpProjectName.EntityFrameworkCore": "1.0.0.0-*"
+    "AbpCompanyName.AbpProjectName.EntityFrameworkCore": "1.0.0.0-*",
+    "Abp.AspNetCore": "0.9.5",
+    "Abp.EntityFrameworkCore": "0.9.5"
   },
 
   "tools": {

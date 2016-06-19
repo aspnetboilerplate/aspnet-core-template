@@ -1,8 +1,8 @@
-﻿{
+{
   "version": "1.0.0.0-*",
 
   "dependencies": {
-    "Abp.EntityFrameworkCore": "0.9.4",
+    "Abp.EntityFrameworkCore": "0.9.5",
     "AbpCompanyName.AbpProjectName.Core": "1.0.0.0-*",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final",
     "Microsoft.EntityFrameworkCore.Tools": {
