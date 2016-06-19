@@ -16,6 +16,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AbpCompanyName.AbpProjectNa
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AbpCompanyName.AbpProjectName.Application", "src\AbpCompanyName.AbpProjectName.Application\AbpCompanyName.AbpProjectName.Application.xproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AbpCompanyName.AbpProjectName.EntityFrameworkCore", "src\AbpCompanyName.AbpProjectName.EntityFrameworkCore\AbpCompanyName.AbpProjectName.EntityFrameworkCore.xproj", "{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3870C648-4AEA-4B85-BA3F-F2F63B96136A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC780BC4-4EAC-4C63-9052-6F3169A59FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +48,6 @@ Global
 		{A2213374-BB48-48FD-BBD4-81E6A961D866} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 		{0FA75A5B-AB83-4FD0-B545-279774C01E87} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 		{3870C648-4AEA-4B85-BA3F-F2F63B96136A} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
+		{DC780BC4-4EAC-4C63-9052-6F3169A59FA4} = {AFAA0841-BD93-466F-B8F4-FB4EEC86F1FC}
 	EndGlobalSection
 EndGlobal

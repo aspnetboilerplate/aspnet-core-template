@@ -5,12 +5,15 @@ using Abp.AspNetCore.Mvc.Authorization;
 using Abp.AspNetCore.Mvc.ExceptionHandling;
 using Abp.AspNetCore.Mvc.Results;
 using Abp.AspNetCore.Mvc.Validation;
+using Abp.Configuration.Startup;
+using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -50,9 +53,11 @@ namespace AbpCompanyName.AbpProjectName.Web
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-            //services.AddDbContext<MyDbContext>(
-            //    options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
-            //);
+            var defaultConnectionString = Configuration.GetConnectionString("Default");
+            AbpBootstrapper.IocManager.Resolve<IAbpStartupConfiguration>().DefaultNameOrConnectionString = defaultConnectionString;
+            services.AddDbContext<AbpProjectNameDbContext>(
+                options => options.UseSqlServer(defaultConnectionString)
+            );
 
             // Add framework services.
             services.AddMvc(options =>
