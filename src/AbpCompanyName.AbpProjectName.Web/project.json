@@ -32,8 +32,7 @@
     "Castle.Windsor-log4net": "3.3.0",
     "AbpCompanyName.AbpProjectName.Application": "1.0.0.0-*",
     "AbpCompanyName.AbpProjectName.EntityFrameworkCore": "1.0.0.0-*",
-    "Abp.AspNetCore": "0.9.5",
-    "Abp.EntityFrameworkCore": "0.9.5"
+    "Abp.AspNetCore": "0.9.5"
   },
 
   "tools": {
