@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
+    /* This class is needed to run "dotnet ef ..." commands from command line.
+     */
     public class AbpProjectNameDbContextFactory : IDbContextFactory<AbpProjectNameDbContext>
     {
         public AbpProjectNameDbContext Create()
