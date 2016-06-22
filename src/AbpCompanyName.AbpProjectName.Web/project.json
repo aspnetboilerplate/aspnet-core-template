@@ -13,8 +13,6 @@
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc2-final",
     "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
       "version": "1.0.0-preview1-final",
@@ -32,8 +30,8 @@
     "Castle.Windsor-log4net": "3.3.0",
     "AbpCompanyName.AbpProjectName.Application": "1.0.0.0-*",
     "AbpCompanyName.AbpProjectName.EntityFrameworkCore": "1.0.0.0-*",
-    "Abp.AspNetCore": "0.9.5",
-    "Castle.LoggingFacility.MsLogging": "0.1.0"
+    "Castle.LoggingFacility.MsLogging": "0.1.0",
+    "Abp.AspNetCore": "0.9.6"
   },
 
   "tools": {

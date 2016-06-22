@@ -2,7 +2,7 @@
   "version": "1.0.0.0-*",
 
   "dependencies": {
-    "Abp.AutoMapper": "0.9.5",
+    "Abp.AutoMapper": "0.9.6",
     "AbpCompanyName.AbpProjectName.Core": "1.0.0.0-*"
   },
 

@@ -2,7 +2,7 @@
   "version": "1.0.0.0-*",
 
   "dependencies": {
-    "Abp": "0.9.5"
+    "Abp": "0.9.6"
   },
 
   "frameworks": {
