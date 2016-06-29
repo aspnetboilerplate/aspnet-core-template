@@ -34,8 +34,8 @@ namespace AbpCompanyName.AbpProjectName.Web
 
             services.AddMvc(options =>
             {
-                options.AddAbp(); //Add ABP infrastructure to MVC
-            }).AddControllersAsServices();
+                options.AddAbp(services); //Add ABP infrastructure to MVC
+            });
 
             //Configure Abp and Dependency Injection
             return services.AddAbp(abpBootstrapper =>

@@ -7,7 +7,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
      */
     public class AbpProjectNameDbContextFactory : IDbContextFactory<AbpProjectNameDbContext>
     {
-        public AbpProjectNameDbContext Create()
+        public AbpProjectNameDbContext Create(DbContextFactoryOptions options)
         {
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
             builder.UseSqlServer("Server=localhost; Database=AbpProjectNameDb; Trusted_Connection=True;");

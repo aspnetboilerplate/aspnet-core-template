@@ -23,7 +23,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
 
             var mvc = services.AddMvc(options =>
             {
-                options.AddAbp(); //Add ABP infrastructure to MVC
+                options.AddAbp(services); //Add ABP infrastructure to MVC
             });
 
             //Workaround defined here: https://github.com/aspnet/Mvc/issues/4897#issuecomment-228093609

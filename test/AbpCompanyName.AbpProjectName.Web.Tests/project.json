@@ -1,18 +1,22 @@
-﻿{
+{
   "version": "1.0.0.0-*",
 
   "testRunner": "xunit",
 
   "dependencies": {
-    "Abp.AspNetCore.TestBase": "0.9.6",
+    "Abp.AspNetCore.TestBase": "0.9.7",
     "AbpCompanyName.AbpProjectName.Tests": "1.0.0.0-*",
     "AbpCompanyName.AbpProjectName.Web": "1.0.0-*",
-    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final"
+    "Microsoft.AspNetCore.Mvc": "1.0.0"
   },
 
   "frameworks": {
     "net461": {
       "Microsoft.NETCore.App": "1.0.0-rc2-3002702"
     }
+  },
+
+  "buildOptions": {
+    "preserveCompilationContext": true
   }
 }
