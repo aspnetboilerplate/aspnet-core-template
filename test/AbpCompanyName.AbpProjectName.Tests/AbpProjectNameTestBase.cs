@@ -21,7 +21,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             modules.Add<AbpProjectNameTestModule>();
         }
 
-        public void UsingDbContext(Action<AbpProjectNameDbContext> action)
+        protected virtual void UsingDbContext(Action<AbpProjectNameDbContext> action)
         {
             using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
             {
@@ -30,7 +30,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        public T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
+        protected virtual T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
         {
             T result;
 
@@ -43,7 +43,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             return result;
         }
 
-        public async Task UsingDbContextAsync(Func<AbpProjectNameDbContext, Task> action)
+        protected virtual async Task UsingDbContextAsync(Func<AbpProjectNameDbContext, Task> action)
         {
             using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
             {
@@ -52,7 +52,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        public async Task<T> UsingDbContextAsync<T>(Func<AbpProjectNameDbContext, Task<T>> func)
+        protected virtual async Task<T> UsingDbContextAsync<T>(Func<AbpProjectNameDbContext, Task<T>> func)
         {
             T result;
 
