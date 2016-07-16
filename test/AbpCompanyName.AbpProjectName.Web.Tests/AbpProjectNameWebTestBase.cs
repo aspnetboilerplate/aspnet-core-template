@@ -4,34 +4,21 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Abp.Dependency;
+using Abp.AspNetCore.TestBase;
 using Abp.Extensions;
-using Abp.TestBase.Runtime.Session;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Shouldly;
-using Microsoft.Extensions.DependencyInjection;
 using Abp.Collections.Extensions;
 
 namespace AbpCompanyName.AbpProjectName.Web.Tests
 {
-    public abstract class AbpProjectNameWebTestBase
+    public abstract class AbpProjectNameWebTestBase :AbpAspNetCoreIntegratedTestBase<Startup>
     {
-        protected TestServer Server { get; private set; }
-
-        protected HttpClient Client { get; private set; }
-
-        protected IServiceProvider ServiceProvider { get; private set; }
-
-        protected IIocManager IocManager { get; private set; }
-
-        protected TestAbpSession AbpSession { get; private set; }
-
         protected static readonly Lazy<string> ContentRootFolder;
 
         static AbpProjectNameWebTestBase()
@@ -41,25 +28,14 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
 
         protected AbpProjectNameWebTestBase()
         {
-            
-
-            var builder = new WebHostBuilder()
-                .UseContentRoot(ContentRootFolder.Value)
-                .UseStartup<Startup>();
-
-            Server = new TestServer(builder);
-            Client = Server.CreateClient();
-
-            ServiceProvider = Server.Host.Services;
-            IocManager = ServiceProvider.GetRequiredService<IIocManager>();
-            AbpSession = ServiceProvider.GetRequiredService<TestAbpSession>();
-
             UsingDbContext(context => new TestDataBuilder(context).Build());
         }
 
-        private static bool DirectoryContains(string directory, string fileName)
+        protected override IWebHostBuilder CreateWebHostBuilder()
         {
-            return Directory.GetFiles(directory).Any(filePath => string.Equals(Path.GetFileName(filePath), fileName));
+            return base
+                .CreateWebHostBuilder()
+                .UseContentRoot(ContentRootFolder.Value);
         }
 
         #region GetUrl
@@ -188,6 +164,11 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             }
 
             return Path.Combine(directoryInfo.FullName, @"src\AbpCompanyName.AbpProjectName.Web");
+        }
+
+        private static bool DirectoryContains(string directory, string fileName)
+        {
+            return Directory.GetFiles(directory).Any(filePath => string.Equals(Path.GetFileName(filePath), fileName));
         }
 
         #endregion
