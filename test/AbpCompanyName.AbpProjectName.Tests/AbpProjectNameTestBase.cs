@@ -1,24 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Abp.Collections;
-using Abp.Modules;
 using Abp.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
-    public class AbpProjectNameTestBase : AbpIntegratedTestBase
+    public class AbpProjectNameTestBase : AbpIntegratedTestBase<AbpProjectNameTestModule>
     {
         public AbpProjectNameTestBase()
         {
             UsingDbContext(context => new TestDataBuilder(context).Build());
-        }
-
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-            modules.Add<AbpProjectNameTestModule>();
         }
 
         protected virtual void UsingDbContext(Action<AbpProjectNameDbContext> action)

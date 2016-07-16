@@ -34,12 +34,9 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             mvc.AddControllersAsServices();
 
             //Configure Abp and Dependency Injection
-            return services.AddAbp(options =>
+            return services.AddAbp<AbpProjectNameWebTestModule>(options =>
             {
-                options.SetupTest(testOptions =>
-                {
-                    testOptions.Modules.Add<AbpProjectNameWebTestModule>();
-                });
+                options.SetupTest();
             });
         }
 

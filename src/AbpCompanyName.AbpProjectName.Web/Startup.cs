@@ -38,10 +38,10 @@ namespace AbpCompanyName.AbpProjectName.Web
             });
 
             //Configure Abp and Dependency Injection
-            return services.AddAbp(abpBootstrapper =>
+            return services.AddAbp<AbpProjectNameWebModule>(options =>
             {
                 //Configure Log4Net logging
-                abpBootstrapper.IocManager.IocContainer.AddFacility<LoggingFacility>(
+                options.IocManager.IocContainer.AddFacility<LoggingFacility>(
                     f => f.UseLog4Net().WithConfig("log4net.config")
                 );
             });
