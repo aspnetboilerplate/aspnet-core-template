@@ -1,5 +1,6 @@
 using System.Reflection;
 using Abp.Modules;
+using Abp.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.MsDependencyInjection;
@@ -10,7 +11,8 @@ namespace AbpCompanyName.AbpProjectName.Tests
 {
     [DependsOn(
         typeof(AbpProjectNameApplicationModule),
-        typeof(AbpProjectNameEntityFrameworkCoreModule)
+        typeof(AbpProjectNameEntityFrameworkCoreModule),
+        typeof(AbpTestBaseModule)
         )]
     public class AbpProjectNameTestModule : AbpModule
     {
