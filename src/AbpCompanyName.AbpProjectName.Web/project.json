@@ -2,11 +2,8 @@
   "dependencies": {
     "AbpCompanyName.AbpProjectName.Application": "1.0.0.0-*",
     "AbpCompanyName.AbpProjectName.EntityFrameworkCore": "1.0.0.0-*",
-
     "Castle.Windsor-log4net": "3.3.0",
     "Castle.LoggingFacility.MsLogging": "1.0.0",
-    "Abp.AspNetCore": "0.10.0.1",
-
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
@@ -35,7 +32,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "Abp.AspNetCore": "0.10.1"
   },
 
   "tools": {
