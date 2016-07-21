@@ -3,6 +3,6 @@
   "texts": {
     "HelloWorld": "Hello World!",
     "ChangeLanguage": "Change language",
-    "OurProducts": "Our products" 
+    "GetProducts": "Get products" 
   }
 }

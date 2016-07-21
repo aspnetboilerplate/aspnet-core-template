@@ -3,6 +3,6 @@
   "texts": {
     "HelloWorld": "Merhaba Dünya!",
     "ChangeLanguage": "Dil değiştir",
-    "OurProducts": "Ürünlerimiz"
+    "GetProducts": "Ürünleri getir"
   }
 }

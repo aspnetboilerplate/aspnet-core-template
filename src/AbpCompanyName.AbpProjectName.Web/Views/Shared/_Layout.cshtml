@@ -1,0 +1,84 @@
+﻿@using System.Threading
+@using Abp.Timing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <title>AbpProjectName</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap-paper/bootstrap.css" />
+    </environment>
+
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap-paper/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+    </environment>
+
+    <!-- View specific styles -->
+    @RenderSection("styles", required: false)
+
+    @*<script type="text/javascript">
+            //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+            var abp = abp || {}; abp.appPath = '@ApplicationPath';
+        </script>*@
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    @*<!--[if lt IE 9]>
+            <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+            <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+        <![endif]-->*@
+
+    @*@Scripts.Render("~/Bundles/vendor/js/top")*@
+
+</head>
+<body>
+    @*@Html.Partial("_TopBar")*@
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/abp.js"></script>
+        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+    </environment>
+
+    <script>
+        abp.localization.defaultSourceName = '@LocalizationSourceName';
+        if (moment) { //Localizing momentjs
+            moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+        }
+    </script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    <!-- View specific scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

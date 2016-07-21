@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using Abp.Web.Mvc.Models;
+﻿using System.Threading.Tasks;
 using AbpCompanyName.AbpProjectName.Web.Controllers;
 using Shouldly;
 using Xunit;
@@ -19,20 +17,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests.Controllers
 
             //Assert
             response.ShouldNotBeNullOrEmpty();
-        }
-
-        [Fact]
-        public async Task GetUserFriendlyException_Should_Be_Handled_And_Return_Provided_Message()
-        {
-            //Act
-            var response = await GetResponseAsObjectAsync<MvcAjaxResponse>(
-                               GetUrl<HomeController>(nameof(HomeController.GetUserFriendlyException)),
-                               HttpStatusCode.InternalServerError
-                           );
-
-            response.Success.ShouldBeFalse();
-            response.Error.ShouldNotBe(null);
-            response.Error.Message.ShouldBe("Test User Friendly Exception");
         }
     }
 }

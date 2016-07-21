@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Abp.AspNetCore;
+using Abp.AspNetCore.Configuration;
 using Abp.Modules;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 
@@ -14,6 +15,11 @@ namespace AbpCompanyName.AbpProjectName.Web
         public override void PreInitialize()
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+
+            Configuration.Modules.AbpAspNetCore()
+                .CreateControllersForAppServices(
+                    typeof(AbpProjectNameApplicationModule).Assembly
+                );
         }
 
         public override void Initialize()
