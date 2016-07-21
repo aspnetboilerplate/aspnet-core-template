@@ -5,14 +5,14 @@ using ASP.NET Core and EntityFramework Core.
 
 ## Prerequirements
 
-* Visual Studio 2015
-* ASP.NET Core RC2 (Download here: https://go.microsoft.com/fwlink/?LinkId=798481)
+* Visual Studio 2015 (Install Update3 if not installed: https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs)
+* ASP.NET Core (Install here: https://go.microsoft.com/fwlink/?LinkId=817245)
 * SQL Server
 
 ## How To Run
 
 * Open solution in Visual Studio 2015
-* Set .Web project as Startup Project
+* Set .Web project as Startup Project and build the project.
 * Run database migrations
   * Open command line
   * Locate to the folder contains .EntityFrameworkCore project
