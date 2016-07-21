@@ -12,7 +12,7 @@ using ASP.NET Core and EntityFramework Core.
 ## How To Run
 
 * Open solution in Visual Studio 2015
-* Set .Web project as Startup Project
+* Set .Web project as Startup Project and build the project.
 * Run database migrations
   * Open command line
   * Locate to the folder contains .EntityFrameworkCore project
