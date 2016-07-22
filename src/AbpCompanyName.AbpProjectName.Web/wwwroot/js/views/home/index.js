@@ -14,6 +14,7 @@
 
                         $('<li>')
                             .attr('data-id', product.id)
+                            .attr('data-category-id', product.categoryId)
                             .html(product.name + " - " + product.price)
                             .appendTo(_$productList);
                     }
