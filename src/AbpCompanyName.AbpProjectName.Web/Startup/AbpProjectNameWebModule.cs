@@ -4,7 +4,7 @@ using Abp.AspNetCore.Configuration;
 using Abp.Modules;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 
-namespace AbpCompanyName.AbpProjectName.Web
+namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     [DependsOn(
         typeof(AbpProjectNameApplicationModule), 

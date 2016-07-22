@@ -1,5 +1,6 @@
 ﻿using System;
 using Abp.AspNetCore;
+using Abp.AspNetCore.Mvc;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
@@ -8,9 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Abp.AspNetCore.Mvc;
 
-namespace AbpCompanyName.AbpProjectName.Web
+namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     public class Startup
     {
