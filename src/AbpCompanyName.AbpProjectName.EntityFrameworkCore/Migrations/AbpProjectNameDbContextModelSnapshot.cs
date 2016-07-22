@@ -13,13 +13,28 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")
+                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("AbpCompanyName.AbpProjectName.Products.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
 
             modelBuilder.Entity("AbpCompanyName.AbpProjectName.Products.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<Guid?>("CategoryId")
+                        .IsRequired();
 
                     b.Property<DateTime>("CreationTime");
 
@@ -37,7 +52,17 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("AbpCompanyName.AbpProjectName.Products.Product", b =>
+                {
+                    b.HasOne("AbpCompanyName.AbpProjectName.Products.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

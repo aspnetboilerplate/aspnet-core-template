@@ -1,6 +1,7 @@
 using System.Reflection;
 using Abp.AspNetCore.TestBase;
 using Abp.Modules;
+using AbpCompanyName.AbpProjectName.Web.Startup;
 
 namespace AbpCompanyName.AbpProjectName.Web.Tests
 {

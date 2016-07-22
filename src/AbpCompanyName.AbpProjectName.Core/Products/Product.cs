@@ -10,6 +10,9 @@ namespace AbpCompanyName.AbpProjectName.Products
         public const int MaxNameLength = 128;
 
         [Required]
+        public virtual Category Category { get; set; }
+
+        [Required]
         [StringLength(MaxNameLength)]
         public string Name { get; set; }
 

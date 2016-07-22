@@ -4,11 +4,9 @@ using Abp.AspNetCore.Mvc;
 using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
-using AbpCompanyName.AbpProjectName.Web.Controllers;
 using Castle.MicroKernel.Registration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -21,17 +19,10 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
         {
             services.AddEntityFrameworkInMemoryDatabase();
 
-            var mvc = services.AddMvc(options =>
+            services.AddMvc(options =>
             {
                 options.AddAbp(services); //Add ABP infrastructure to MVC
             });
-
-            //Workaround defined here: https://github.com/aspnet/Mvc/issues/4897#issuecomment-228093609
-            var parts = mvc.PartManager.ApplicationParts;
-            parts.Clear();
-            parts.Add(new AssemblyPart(typeof(HomeController).Assembly));
-
-            mvc.AddControllersAsServices();
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<AbpProjectNameWebTestModule>(options =>
