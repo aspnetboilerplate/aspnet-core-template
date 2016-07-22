@@ -14,7 +14,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
     {
         public override void PreInitialize()
         {
-            Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+            Configuration.Navigation.Providers.Add<AbpProjectNameNavigationProvider>();
 
             Configuration.Modules.AbpAspNetCore()
                 .CreateControllersForAppServices(

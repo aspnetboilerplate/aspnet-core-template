@@ -3,6 +3,9 @@
   "texts": {
     "HelloWorld": "Merhaba Dünya!",
     "ChangeLanguage": "Dil değiştir",
-    "GetProducts": "Ürünleri getir"
+    "GetProducts": "Ürünleri getir",
+
+    "HomePage": "Ana sayfa",
+    "About": "Hakkında"
   }
 }

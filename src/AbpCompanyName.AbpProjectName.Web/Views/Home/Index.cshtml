@@ -11,24 +11,6 @@
 
 <h2>@L("HelloWorld")!</h2>
 
-<h3>@L("ChangeLanguage"):</h3>
-
-<ul>
-    @foreach (var languageInfo in LocalizationManager.GetAllLanguages())
-    {
-        <li>
-            @if (LocalizationManager.CurrentLanguage.Name == languageInfo.Name)
-            {
-                <span class="text-muted">@languageInfo.DisplayName</span>
-            }
-            else
-            {
-                <a href="/AbpLocalization/ChangeCulture?cultureName=@languageInfo.Name">@languageInfo.DisplayName</a>
-            }
-        </li>
-    }
-</ul>
-
 <div class="row">
     <div class="col-lg-12">
         <a id="GetProductsButton" class="btn btn-primary" href="#">@L("GetProducts")!</a>

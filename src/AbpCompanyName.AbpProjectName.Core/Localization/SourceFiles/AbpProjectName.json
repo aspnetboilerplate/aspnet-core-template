@@ -3,6 +3,9 @@
   "texts": {
     "HelloWorld": "Hello World!",
     "ChangeLanguage": "Change language",
-    "GetProducts": "Get products" 
+    "GetProducts": "Get products",
+
+    "HomePage": "HomePage",
+    "About": "About"
   }
 }
