@@ -8,9 +8,10 @@ using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(AbpProjectNameDbContext))]
-    partial class AbpProjectNameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160722131107_Changed_Category_Table_Name")]
+    partial class Changed_Category_Table_Name
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

@@ -6,7 +6,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
     public class AbpProjectNameDbContext : AbpDbContext
     {
-        //TODO: Define an DbSet for each Entity...
+        public DbSet<Category> Categories { get; set; }
 
         public DbSet<Product> Products { get; set; }
 

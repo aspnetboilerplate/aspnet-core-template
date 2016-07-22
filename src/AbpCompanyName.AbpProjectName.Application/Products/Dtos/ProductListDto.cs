@@ -5,7 +5,7 @@ using Abp.AutoMapper;
 namespace AbpCompanyName.AbpProjectName.Products.Dtos
 {
     [AutoMapFrom(typeof(Product))]
-    public class ProductDto : EntityDto
+    public class ProductListDto : AuditedEntityDto
     {
         public Guid CategoryId { get; set; }
 

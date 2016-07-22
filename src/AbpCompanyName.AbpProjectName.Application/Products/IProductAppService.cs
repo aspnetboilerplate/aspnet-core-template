@@ -7,6 +7,6 @@ namespace AbpCompanyName.AbpProjectName.Products
 {
     public interface IProductAppService : IApplicationService
     {
-        Task<ListResultOutput<ProductDto>> GetAllProducts();
+        Task<ListResultOutput<ProductListDto>> GetAllProducts();
     }
 }
