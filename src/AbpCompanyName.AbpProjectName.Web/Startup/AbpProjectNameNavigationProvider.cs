@@ -5,9 +5,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     /// <summary>
     /// This class defines menus for the application.
-    /// It uses ABP's menu system.
-    /// When you add menu items here, they are automatically appear in angular application.
-    /// See Views/Layout/_TopMenu.cshtml file to know how to render menu.
     /// </summary>
     public class AbpProjectNameNavigationProvider : NavigationProvider
     {
@@ -17,18 +14,23 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
                 .AddItem(
                     new MenuItemDefinition(
                         "Home",
-                        new LocalizableString("HomePage", AbpProjectNameConsts.LocalizationSourceName),
+                        L("HomePage"),
                         url: "",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "About",
-                        new LocalizableString("About", AbpProjectNameConsts.LocalizationSourceName),
-                        url: "About",
+                        L("About"),
+                        url: "Home/About",
                         icon: "fa fa-info"
                         )
                 );
+        }
+
+        private static ILocalizableString L(string name)
+        {
+            return new LocalizableString(name, AbpProjectNameConsts.LocalizationSourceName);
         }
     }
 }

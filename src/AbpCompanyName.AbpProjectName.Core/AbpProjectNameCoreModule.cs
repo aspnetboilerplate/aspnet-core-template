@@ -9,6 +9,7 @@ namespace AbpCompanyName.AbpProjectName
         public override void PreInitialize()
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+
             AbpProjectNameLocalizationConfigurer.Configure(Configuration.Localization);
         }
 

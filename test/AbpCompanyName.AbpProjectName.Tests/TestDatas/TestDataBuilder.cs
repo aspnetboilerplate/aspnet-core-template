@@ -1,5 +1,4 @@
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
-using AbpCompanyName.AbpProjectName.Products;
 
 namespace AbpCompanyName.AbpProjectName.Tests.TestDatas
 {
@@ -14,13 +13,7 @@ namespace AbpCompanyName.AbpProjectName.Tests.TestDatas
 
         public void Build()
         {
-            CreateProducts();
-        }
-
-        private void CreateProducts()
-        {
-            _context.Products.Add(new Product("Acme 23 inch monitor", 849));
-            _context.Products.Add(new Product("Acme wireless keyboard and mouse set"));
+            //create test data here...
         }
     }
 }

@@ -9,6 +9,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
     {
         public AbpProjectNameDbContext Create(DbContextFactoryOptions options)
         {
+            //TODO: Get connection string from a common place
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
             builder.UseSqlServer("Server=localhost; Database=AbpProjectNameDb; Trusted_Connection=True;");
             return new AbpProjectNameDbContext(builder.Options);
