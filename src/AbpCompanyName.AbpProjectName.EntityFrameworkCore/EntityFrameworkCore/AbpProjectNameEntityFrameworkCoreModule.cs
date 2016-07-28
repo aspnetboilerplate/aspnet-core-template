@@ -9,11 +9,6 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
         typeof(AbpEntityFrameworkCoreModule))]
     public class AbpProjectNameEntityFrameworkCoreModule : AbpModule
     {
-        public override void PreInitialize()
-        {
-            Configuration.DefaultNameOrConnectionString = "Default";
-        }
-
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());

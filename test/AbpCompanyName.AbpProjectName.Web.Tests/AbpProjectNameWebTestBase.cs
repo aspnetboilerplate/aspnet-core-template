@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -23,7 +22,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
 
         static AbpProjectNameWebTestBase()
         {
-            ContentRootFolder = new Lazy<string>(CalculateContentRootFolder, true);
+            ContentRootFolder = new Lazy<string>(WebContentDirectoryFinder.CalculateContentRootFolder, true);
         }
 
         protected AbpProjectNameWebTestBase()
@@ -144,31 +143,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             }
 
             return result;
-        }
-
-        #endregion
-
-        #region Other private methods
-
-        private static string CalculateContentRootFolder()
-        {
-            var directoryInfo = new DirectoryInfo(Path.GetDirectoryName(typeof(AbpProjectNameWebTestBase).Assembly.Location));
-            while (!DirectoryContains(directoryInfo.FullName, "AbpCompanyName.AbpProjectName.sln"))
-            {
-                if (directoryInfo.Parent == null)
-                {
-                    throw new Exception("Could not find content root folder!");
-                }
-
-                directoryInfo = directoryInfo.Parent;
-            }
-
-            return Path.Combine(directoryInfo.FullName, @"src\AbpCompanyName.AbpProjectName.Web");
-        }
-
-        private static bool DirectoryContains(string directory, string fileName)
-        {
-            return Directory.GetFiles(directory).Any(filePath => string.Equals(Path.GetFileName(filePath), fileName));
         }
 
         #endregion

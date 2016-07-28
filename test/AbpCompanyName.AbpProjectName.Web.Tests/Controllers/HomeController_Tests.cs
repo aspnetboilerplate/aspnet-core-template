@@ -8,7 +8,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests.Controllers
     public class HomeController_Tests: AbpProjectNameWebTestBase
     {
         [Fact]
-        public async Task Index_Should_Return_Products_List_View()
+        public async Task Index_Test()
         {
             //Act
             var response = await GetResponseAsStringAsync(

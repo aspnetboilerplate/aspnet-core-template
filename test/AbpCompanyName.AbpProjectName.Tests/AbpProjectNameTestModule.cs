@@ -18,6 +18,17 @@ namespace AbpCompanyName.AbpProjectName.Tests
     {
         public override void PreInitialize()
         {
+            Configuration.UnitOfWork.IsTransactional = false; //EF Core InMemory DB does not support transactions.
+            SetupInMemoryDb();
+        }
+
+        public override void Initialize()
+        {
+            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+        }
+
+        private void SetupInMemoryDb()
+        {
             var services = new ServiceCollection()
                 .AddEntityFrameworkInMemoryDatabase();
 
@@ -27,19 +38,14 @@ namespace AbpCompanyName.AbpProjectName.Tests
             );
 
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseInMemoryDatabase()
-                .UseInternalServiceProvider(serviceProvider);
-
-            var options = builder.Options;
+            builder.UseInMemoryDatabase().UseInternalServiceProvider(serviceProvider);
 
             IocManager.IocContainer.Register(
-                Component.For<DbContextOptions<AbpProjectNameDbContext>>().Instance(options).LifestyleSingleton()
+                Component
+                    .For<DbContextOptions<AbpProjectNameDbContext>>()
+                    .Instance(builder.Options)
+                    .LifestyleSingleton()
             );
-        }
-
-        public override void Initialize()
-        {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
     }
 }

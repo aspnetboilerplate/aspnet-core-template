@@ -1,12 +1,9 @@
 ﻿using System;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Mvc;
-using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -14,24 +11,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; }
-
-        public Startup(IHostingEnvironment env)
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
-        }
-
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AbpProjectNameDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("Default"))
-            );
-
             services.AddMvc(options =>
             {
                 options.AddAbp(services); //Add ABP infrastructure to MVC
