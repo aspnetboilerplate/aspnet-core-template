@@ -1,8 +1,6 @@
 ﻿using System.Reflection;
-using Abp.Localization;
-using Abp.Localization.Dictionaries;
-using Abp.Localization.Dictionaries.Json;
 using Abp.Modules;
+using AbpCompanyName.AbpProjectName.Localization;
 
 namespace AbpCompanyName.AbpProjectName
 {
@@ -12,17 +10,7 @@ namespace AbpCompanyName.AbpProjectName
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
-            Configuration.Localization.Languages.Add(new LanguageInfo("en", "English", isDefault: true));
-            Configuration.Localization.Languages.Add(new LanguageInfo("tr", "Türkçe"));
-
-            Configuration.Localization.Sources.Add(
-                new DictionaryBasedLocalizationSource(AbpProjectNameConsts.LocalizationSourceName,
-                    new JsonEmbeddedFileLocalizationDictionaryProvider(
-                        Assembly.GetExecutingAssembly(),
-                        "AbpCompanyName.AbpProjectName.Core.Localization.SourceFiles"
-                    )
-                )
-            );
+            AbpProjectNameLocalizationConfigurer.Configure(Configuration.Localization);
         }
 
         public override void Initialize()

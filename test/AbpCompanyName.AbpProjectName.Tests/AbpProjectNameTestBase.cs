@@ -1,27 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Abp.Collections;
-using Abp.Modules;
 using Abp.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
 
 namespace AbpCompanyName.AbpProjectName.Tests
 {
-    public class AbpProjectNameTestBase : AbpIntegratedTestBase
+    public class AbpProjectNameTestBase : AbpIntegratedTestBase<AbpProjectNameTestModule>
     {
         public AbpProjectNameTestBase()
         {
             UsingDbContext(context => new TestDataBuilder(context).Build());
         }
 
-        protected override void AddModules(ITypeList<AbpModule> modules)
-        {
-            base.AddModules(modules);
-            modules.Add<AbpProjectNameTestModule>();
-        }
-
-        public void UsingDbContext(Action<AbpProjectNameDbContext> action)
+        protected virtual void UsingDbContext(Action<AbpProjectNameDbContext> action)
         {
             using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
             {
@@ -30,7 +22,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        public T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
+        protected virtual T UsingDbContext<T>(Func<AbpProjectNameDbContext, T> func)
         {
             T result;
 
@@ -43,7 +35,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             return result;
         }
 
-        public async Task UsingDbContextAsync(Func<AbpProjectNameDbContext, Task> action)
+        protected virtual async Task UsingDbContextAsync(Func<AbpProjectNameDbContext, Task> action)
         {
             using (var context = LocalIocManager.Resolve<AbpProjectNameDbContext>())
             {
@@ -52,7 +44,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             }
         }
 
-        public async Task<T> UsingDbContextAsync<T>(Func<AbpProjectNameDbContext, Task<T>> func)
+        protected virtual async Task<T> UsingDbContextAsync<T>(Func<AbpProjectNameDbContext, Task<T>> func)
         {
             T result;
 

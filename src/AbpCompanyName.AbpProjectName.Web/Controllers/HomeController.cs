@@ -1,23 +1,17 @@
-using System.Threading.Tasks;
-using Abp.AspNetCore.Mvc.Controllers;
-using AbpCompanyName.AbpProjectName.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
 {
-    public class HomeController : AbpController
+    public class HomeController : AbpProjectNameControllerBase
     {
-        private readonly IProductAppService _productAppService;
-
-        public HomeController(IProductAppService productAppService)
+        public ActionResult Index()
         {
-            _productAppService = productAppService;
+            return View();
         }
 
-        public async Task<IActionResult> Index()
+        public ActionResult About()
         {
-            var model = await _productAppService.GetAllProducts();
-            return View(model);
+            return View();
         }
     }
 }

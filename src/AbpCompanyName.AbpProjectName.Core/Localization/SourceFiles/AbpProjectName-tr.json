@@ -3,6 +3,9 @@
   "texts": {
     "HelloWorld": "Merhaba Dünya!",
     "ChangeLanguage": "Dil değiştir",
-    "OurProducts": "Ürünlerimiz"
+    "HomePage": "Ana sayfa",
+    "About": "Hakkında",
+    "Home_Description": "AbpProjectName projesine hoşgeldiniz...",
+    "About_Description": "Bu proje, ASP.NET Core ile ABP framework kullanmak için basit bir başlangıç şablonudur."
   }
 }
