@@ -1,17 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AbpCompanyName.AbpProjectName.Configuration;
+using AbpCompanyName.AbpProjectName.Web;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
-    /* This class is needed to run "dotnet ef ..." commands from command line.
-     */
+    /* This class is needed to run "dotnet ef ..." commands from command line on development. Not used anywhere else */
     public class AbpProjectNameDbContextFactory : IDbContextFactory<AbpProjectNameDbContext>
     {
         public AbpProjectNameDbContext Create(DbContextFactoryOptions options)
         {
-            //TODO: Get connection string from a common place
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseSqlServer("Server=localhost; Database=AbpProjectNameDb; Trusted_Connection=True;");
+            var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
+
+            DbContextOptionsConfigurer.Configure(
+                builder, 
+                configuration.GetConnectionString(AbpProjectNameConsts.ConnectionStringName)
+                );
+
             return new AbpProjectNameDbContext(builder.Options);
         }
     }
