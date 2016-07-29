@@ -13,9 +13,4 @@ using ASP.NET Core and EntityFramework Core.
 
 * Open solution in Visual Studio 2015
 * Set .Web project as Startup Project and build the project.
-* Run database migrations
-  * Open command line
-  * Locate to the folder contains .EntityFrameworkCore project
-  * Run "dotnet ef database update" command from console.
-* Add a few product to Products table in the database.
 * Run the application.
