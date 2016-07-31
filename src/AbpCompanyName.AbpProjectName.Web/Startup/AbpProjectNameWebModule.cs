@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
-using Abp.EntityFrameworkCore.Configuration;
 using Abp.Modules;
 using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
@@ -26,11 +25,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
         public override void PreInitialize()
         {
             Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(AbpProjectNameConsts.ConnectionStringName);
-
-            Configuration.Modules.AbpEfCore().AddDbContext<AbpProjectNameDbContext>(options =>
-            {
-                DbContextOptionsConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
-            });
 
             Configuration.Navigation.Providers.Add<AbpProjectNameNavigationProvider>();
 
