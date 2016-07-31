@@ -13,14 +13,14 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "Home",
+                        PageNames.Home,
                         L("HomePage"),
                         url: "",
                         icon: "fa fa-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
-                        "About",
+                        PageNames.About,
                         L("About"),
                         url: "Home/About",
                         icon: "fa fa-info"

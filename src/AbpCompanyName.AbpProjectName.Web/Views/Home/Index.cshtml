@@ -1,4 +1,9 @@
-﻿@section scripts
+﻿@using AbpCompanyName.AbpProjectName.Web.Startup
+@{
+    ViewBag.ActiveMenu = PageNames.Home;
+}
+
+@section scripts
 {
     <environment names="Development">
         <script src="~/js/views/home/index.js"></script>
