@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Abp.AspNetCore.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
+using AngleSharp.Dom.Html;
+using AngleSharp.Parser.Html;
 using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -106,6 +108,15 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             }
 
             return result;
+        }
+
+        #endregion
+
+        #region ParseHtml
+
+        protected IHtmlDocument ParseHtml(string htmlString)
+        {
+            return new HtmlParser().Parse(htmlString);
         }
 
         #endregion
