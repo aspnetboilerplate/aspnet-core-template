@@ -1,5 +1,6 @@
 ﻿using System;
 using Abp.AspNetCore;
+using Abp.Castle.Logging.Log4Net;
 using Abp.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
@@ -27,7 +28,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             {
                 //Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseLog4Net().WithConfig("log4net.config")
+                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
                 );
             });
         }
