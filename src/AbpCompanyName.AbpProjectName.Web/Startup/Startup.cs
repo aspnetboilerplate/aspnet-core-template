@@ -1,6 +1,5 @@
 ﻿using System;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc;
 using Abp.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
@@ -21,10 +20,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
                 DbContextOptionsConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
             });
 
-            services.AddMvc(options =>
-            {
-                options.AddAbp(services); //Add ABP infrastructure to MVC
-            });
+            services.AddMvc();
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<AbpProjectNameWebModule>(options =>

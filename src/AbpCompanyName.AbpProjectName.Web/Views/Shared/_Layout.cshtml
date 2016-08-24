@@ -3,6 +3,11 @@
 @using Abp.Timing
 @using AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.LanguageSelection
 @using AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.TopMenu
+@using Abp.Web.Security.AntiForgery
+@inject IAbpAntiForgeryManager AbpAntiForgeryManager
+@{
+    AbpAntiForgeryManager.SetCookie(Context);
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
