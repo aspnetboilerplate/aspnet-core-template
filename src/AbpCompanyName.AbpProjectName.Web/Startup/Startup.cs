@@ -6,6 +6,7 @@ using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -21,7 +22,10 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
                 DbContextOptionsConfigurer.Configure(options.DbContextOptions, options.ConnectionString);
             });
 
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<AbpProjectNameWebModule>(options =>
