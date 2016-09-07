@@ -29,18 +29,7 @@
     </environment>
 
     <environment names="Staging,Production">
-        @* TODO: BUNDLE / Get from CDN ? *@
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap-paper/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-
-        <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
-        <link rel="stylesheet" href="~/lib/sweetalert/dist/sweetalert.css" />
-        <link rel="stylesheet" href="~/lib/famfamfam-flags/dist/sprite/famfamfam-flags.min.css" />
-        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
-
-        <link rel="stylesheet" href="~/css/main.min.css" />
+        <link rel="stylesheet" href="~/view-resources/Views/_Bundles/layout-libs.min.css" asp-append-version="true" />
     </environment>
 
     <!-- View specific styles -->
@@ -110,32 +99,7 @@
     </environment>
 
     <environment names="Staging,Production">
-        @* TODO: BUNDLE / Get from CDN ? *@
-
-        <script src="~/lib/json2/json2.js"></script>
-
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-
-        <script src="~/lib/moment/min/moment-with-locales.min.js"></script>
-        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script src="~/lib/blockUI/jquery.blockUI.js"></script>
-        <script src="~/lib/toastr/toastr.min.js"></script>
-        <script src="~/lib/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="~/lib/spin.js/spin.min.js"></script>
-        <script src="~/lib/spin.js/jquery.spin.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/abp.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>
-        <script src="~/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js"></script>
+        <script src="~/view-resources/Views/_Bundles/layout-libs.min.js" asp-append-version="true"></script>
     </environment>
 
     <script>
