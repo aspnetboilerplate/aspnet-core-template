@@ -1,11 +1,12 @@
 ﻿using System;
 using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc;
+using Abp.Castle.Logging.Log4Net;
 using Abp.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -23,7 +24,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 
             services.AddMvc(options =>
             {
-                options.AddAbp(services); //Add ABP infrastructure to MVC
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
 
             //Configure Abp and Dependency Injection
@@ -31,7 +32,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             {
                 //Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseLog4Net().WithConfig("log4net.config")
+                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
                 );
             });
         }

@@ -12,8 +12,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests.Controllers
         {
             //Act
             var response = await GetResponseAsStringAsync(
-                               GetUrl<HomeController>(nameof(HomeController.Index))
-                           );
+                GetUrl<HomeController>(nameof(HomeController.Index))
+            );
 
             //Assert
             response.ShouldNotBeNullOrEmpty();
