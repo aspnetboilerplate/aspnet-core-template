@@ -3,8 +3,8 @@
 
   "dependencies": {
     "AbpCompanyName.AbpProjectName.Core": "1.0.0.0-*",
-    "Abp.EntityFrameworkCore": "0.11.0.2",
-    "Abp.AutoMapper": "0.11.0.2"
+    "Abp.EntityFrameworkCore": "1.0.0",
+    "Abp.AutoMapper": "1.0.0"
   },
 
   "frameworks": {
