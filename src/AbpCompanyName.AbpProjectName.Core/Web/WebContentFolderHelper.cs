@@ -12,7 +12,7 @@ namespace AbpCompanyName.AbpProjectName.Web
     {
         public static string CalculateContentRootFolder()
         {
-            var coreAssemblyDirectoryPath = Path.GetDirectoryName(typeof(AbpProjectNameCoreModule).Assembly.Location);
+            var coreAssemblyDirectoryPath = Path.GetDirectoryName(AppContext.BaseDirectory);
             if (coreAssemblyDirectoryPath == null)
             {
                 throw new ApplicationException("Could not find location of AbpCompanyName.AbpProjectName.Core assembly!");

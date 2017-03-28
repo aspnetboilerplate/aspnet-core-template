@@ -38,7 +38,7 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Abp.AspNetCore" Version="1.5.1" />
