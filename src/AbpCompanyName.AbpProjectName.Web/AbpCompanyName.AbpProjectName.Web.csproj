@@ -43,8 +43,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Abp.AspNetCore" Version="2.0.1" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="2.0.1" />
+    <PackageReference Include="Abp.AspNetCore" Version="2.0.2" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
