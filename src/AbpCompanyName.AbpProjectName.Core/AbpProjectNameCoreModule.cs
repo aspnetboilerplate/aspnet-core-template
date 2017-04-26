@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using Abp.Modules;
+﻿using Abp.Modules;
+using Abp.Reflection.Extensions;
 using AbpCompanyName.AbpProjectName.Localization;
 
 namespace AbpCompanyName.AbpProjectName
@@ -15,7 +15,7 @@ namespace AbpCompanyName.AbpProjectName
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameCoreModule).GetAssembly());
         }
     }
 }

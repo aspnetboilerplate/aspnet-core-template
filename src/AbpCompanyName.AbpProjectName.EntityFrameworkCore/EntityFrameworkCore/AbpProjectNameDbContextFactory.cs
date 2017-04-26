@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
-    /* This class is needed to run "dotnet ef ..." commands from command line on development. Not used anywhere else */
+    /* This class is needed to run EF Core PMC commands. Not used anywhere else */
     public class AbpProjectNameDbContextFactory : IDbContextFactory<AbpProjectNameDbContext>
     {
         public AbpProjectNameDbContext Create(DbContextFactoryOptions options)

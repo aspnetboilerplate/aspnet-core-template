@@ -15,7 +15,7 @@ namespace AbpCompanyName.AbpProjectName.Web
             var coreAssemblyDirectoryPath = Path.GetDirectoryName(AppContext.BaseDirectory);
             if (coreAssemblyDirectoryPath == null)
             {
-                throw new ApplicationException("Could not find location of AbpCompanyName.AbpProjectName.Core assembly!");
+                throw new Exception("Could not find location of AbpCompanyName.AbpProjectName.Core assembly!");
             }
 
             var directoryInfo = new DirectoryInfo(coreAssemblyDirectoryPath);
@@ -23,7 +23,7 @@ namespace AbpCompanyName.AbpProjectName.Web
             {
                 if (directoryInfo.Parent == null)
                 {
-                    throw new ApplicationException("Could not find content root folder!");
+                    throw new Exception("Could not find content root folder!");
                 }
 
                 directoryInfo = directoryInfo.Parent;

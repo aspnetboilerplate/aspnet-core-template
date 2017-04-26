@@ -1,6 +1,6 @@
-﻿using System.Reflection;
-using Abp.EntityFrameworkCore;
+﻿using Abp.EntityFrameworkCore;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
@@ -11,7 +11,7 @@ namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameEntityFrameworkCoreModule).GetAssembly());
         }
     }
 }
