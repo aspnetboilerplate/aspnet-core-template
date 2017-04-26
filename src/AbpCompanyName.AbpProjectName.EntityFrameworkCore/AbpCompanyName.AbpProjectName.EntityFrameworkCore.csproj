@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <VersionPrefix>1.0.0.0</VersionPrefix>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFrameworks>net461;netcoreapp1.1</TargetFrameworks>
     <AssemblyName>AbpCompanyName.AbpProjectName.EntityFrameworkCore</AssemblyName>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <PackageId>AbpCompanyName.AbpProjectName.EntityFrameworkCore</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>AbpCompanyName.AbpProjectName</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

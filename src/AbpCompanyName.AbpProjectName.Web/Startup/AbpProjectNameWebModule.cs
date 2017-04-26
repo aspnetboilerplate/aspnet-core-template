@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-using Abp.AspNetCore;
+﻿using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -30,13 +30,13 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 
             Configuration.Modules.AbpAspNetCore()
                 .CreateControllersForAppServices(
-                    typeof(AbpProjectNameApplicationModule).Assembly
+                    typeof(AbpProjectNameApplicationModule).GetAssembly()
                 );
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameWebModule).GetAssembly());
         }
     }
 }

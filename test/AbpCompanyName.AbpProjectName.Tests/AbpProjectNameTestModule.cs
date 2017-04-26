@@ -1,5 +1,6 @@
 using System.Reflection;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Abp.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Castle.MicroKernel.Registration;
@@ -24,7 +25,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameTestModule).GetAssembly());
         }
 
         private void SetupInMemoryDb()
