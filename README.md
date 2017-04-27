@@ -5,7 +5,7 @@ using ASP.NET Core and EntityFramework Core.
 
 ## Prerequirements
 
-* Visual Studio 2015 (Install Update3 if not installed: https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs)
+* Visual Studio 2017
 * .NET Core SDK
 * SQL Server
 
