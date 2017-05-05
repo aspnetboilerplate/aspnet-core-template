@@ -8,6 +8,9 @@
     <AssemblyName>AbpCompanyName.AbpProjectName.Web</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>AbpCompanyName.AbpProjectName.Web</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
   <ItemGroup>
