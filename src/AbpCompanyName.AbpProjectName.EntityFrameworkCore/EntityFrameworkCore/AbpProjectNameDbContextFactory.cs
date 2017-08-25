@@ -1,23 +1,23 @@
 ﻿using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.Web;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
 namespace AbpCompanyName.AbpProjectName.EntityFrameworkCore
 {
     /* This class is needed to run EF Core PMC commands. Not used anywhere else */
-    public class AbpProjectNameDbContextFactory : IDbContextFactory<AbpProjectNameDbContext>
+    public class AbpProjectNameDbContextFactory : IDesignTimeDbContextFactory<AbpProjectNameDbContext>
     {
-        public AbpProjectNameDbContext Create(DbContextFactoryOptions options)
+        public AbpProjectNameDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
             var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
 
             DbContextOptionsConfigurer.Configure(
-                builder, 
+                builder,
                 configuration.GetConnectionString(AbpProjectNameConsts.ConnectionStringName)
-                );
+            );
 
             return new AbpProjectNameDbContext(builder.Options);
         }
