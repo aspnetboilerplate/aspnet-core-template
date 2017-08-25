@@ -51,7 +51,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
         private void UseInMemoryDb(IServiceProvider serviceProvider)
         {
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseInMemoryDatabase().UseInternalServiceProvider(serviceProvider);
+            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
             var options = builder.Options;
 
             var iocManager = serviceProvider.GetRequiredService<IIocManager>();
