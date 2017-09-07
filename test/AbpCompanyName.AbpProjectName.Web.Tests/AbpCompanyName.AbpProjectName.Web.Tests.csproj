@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Version>1.0.0.0</Version>
     <TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>
-    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>AbpCompanyName.AbpProjectName.Web.Tests</AssemblyName>
     <PackageId>AbpCompanyName.AbpProjectName.Web.Tests</PackageId>
@@ -25,7 +25,7 @@
     <PackageReference Include="xunit" Version="2.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
-    <PackageReference Include="Abp.AspNetCore.TestBase" Version="3.0.0-beta3" />
+    <PackageReference Include="Abp.AspNetCore.TestBase" Version="3.0.0-rc2" />
     <PackageReference Include="AngleSharp" Version="0.9.9" />
     <PackageReference Include="Castle.Core" Version="4.1.1" />
   </ItemGroup>
