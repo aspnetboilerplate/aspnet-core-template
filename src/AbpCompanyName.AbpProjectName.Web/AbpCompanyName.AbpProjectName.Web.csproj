@@ -49,8 +49,8 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Castle.Core" Version="4.2.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="3.2.3" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="3.2.3" />
+    <PackageReference Include="Abp.AspNetCore" Version="3.2.4" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="3.2.4" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
