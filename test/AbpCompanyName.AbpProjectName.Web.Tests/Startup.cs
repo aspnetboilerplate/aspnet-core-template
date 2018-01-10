@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace AbpCompanyName.AbpProjectName.Web.Tests
 {
@@ -51,7 +52,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
         private void UseInMemoryDb(IServiceProvider serviceProvider)
         {
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
+            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider)
+                .ConfigureWarnings(w => w.Ignore(InMemoryEventId.TransactionIgnoredWarning));
             var options = builder.Options;
 
             var iocManager = serviceProvider.GetRequiredService<IIocManager>();
