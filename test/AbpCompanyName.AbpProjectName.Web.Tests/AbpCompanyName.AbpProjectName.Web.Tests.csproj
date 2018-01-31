@@ -25,8 +25,8 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.1" />
-    <PackageReference Include="Abp.AspNetCore.TestBase" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.2" />
+    <PackageReference Include="Abp.AspNetCore.TestBase" Version="3.4.0" />
     <PackageReference Include="AngleSharp" Version="0.9.9" />
   </ItemGroup>
 
