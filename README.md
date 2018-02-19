@@ -11,6 +11,6 @@ using ASP.NET Core and EntityFramework Core.
 
 ## How To Run
 
-* Open solution in Visual Studio 2015
+* Open solution in Visual Studio 2017
 * Set .Web project as Startup Project and build the project.
 * Run the application.
