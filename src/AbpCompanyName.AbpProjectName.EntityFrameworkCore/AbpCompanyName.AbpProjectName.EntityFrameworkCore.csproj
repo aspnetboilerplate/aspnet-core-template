@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20180927070638_Upgrade_ABP_3.8.3.cs" />
+    <Compile Remove="Migrations\20190208081432_Upgrade_ABP_To_4_2_0.cs" />
   </ItemGroup>
 
   <ItemGroup>
