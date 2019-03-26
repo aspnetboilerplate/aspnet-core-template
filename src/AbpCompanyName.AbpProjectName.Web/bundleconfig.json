@@ -10,7 +10,6 @@
     "inputFiles": [
       "wwwroot/lib/bootstrap-paper/bootstrap.css",
       "wwwroot/lib/toastr/toastr.css",
-      "wwwroot/lib/sweetalert/dist/sweetalert.css",
       "wwwroot/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css",
       "wwwroot/lib/font-awesome/css/font-awesome.css",
       "wwwroot/css/main.css"
@@ -26,7 +25,7 @@
       "wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "wwwroot/lib/blockUI/jquery.blockUI.js",
       "wwwroot/lib/toastr/toastr.js",
-      "wwwroot/lib/sweetalert/dist/sweetalert-dev.js",
+      "wwwroot/lib/sweetalert/dist/sweetalert.min.js",
       "wwwroot/lib/spin.js/spin.js",
       "wwwroot/lib/spin.js/jquery.spin.js",
       "wwwroot/lib/abp-web-resources/Abp/Framework/scripts/abp.js",
