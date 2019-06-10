@@ -1,3 +1,7 @@
+# Important
+
+Issues of this repository are tracked on https://github.com/aspnetboilerplate/aspnetboilerplate. Please create your issues on https://github.com/aspnetboilerplate/aspnetboilerplate/issues.
+
 # ASP.NET Core & EntityFramework Core Based Startup Template
 
 This template is a simple startup project to start with ABP
