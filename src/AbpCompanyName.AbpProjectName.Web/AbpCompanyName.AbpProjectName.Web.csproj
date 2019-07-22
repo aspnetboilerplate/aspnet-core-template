@@ -50,8 +50,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
-    <PackageReference Include="Abp.AspNetCore" Version="4.7.0" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="4.7.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="4.8.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="4.8.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">

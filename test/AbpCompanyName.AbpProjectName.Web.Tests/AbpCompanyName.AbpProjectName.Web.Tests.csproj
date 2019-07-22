@@ -29,7 +29,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Abp.AspNetCore.TestBase" Version="4.7.0" />
+    <PackageReference Include="Abp.AspNetCore.TestBase" Version="4.8.0" />
     <PackageReference Include="AngleSharp" Version="0.12.1" />
   </ItemGroup>
 
