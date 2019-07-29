@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="4.8.0" />
-    <PackageReference Include="Abp.AutoMapper" Version="4.8.0" />
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="4.8.1" />
+    <PackageReference Include="Abp.AutoMapper" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
