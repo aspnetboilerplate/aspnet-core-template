@@ -17,6 +17,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180726084415_Upgrade_ABP_3.8.0.cs" />
+    <Compile Remove="Migrations\20180726084415_Upgrade_ABP_3.8.0.Designer.cs" />
+    <Compile Remove="Migrations\20181015085310_Upgraded_To_ABP_v3_9_0.cs" />
+    <Compile Remove="Migrations\20181015085310_Upgraded_To_ABP_v3_9_0.Designer.cs" />
     <Compile Remove="Migrations\20190719145525_Upgraded_To_Abp_4_8_0.cs" />
     <Compile Remove="Migrations\20190719145525_Upgraded_To_Abp_4_8_0.Designer.cs" />
   </ItemGroup>
@@ -43,6 +47,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
