@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Version>1.0.0.0</Version>
-    <TargetFrameworks>net461;netcoreapp2.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>AbpCompanyName.AbpProjectName.Web.Tests</AssemblyName>
@@ -16,26 +16,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AbpCompanyName.AbpProjectName.Tests\AbpCompanyName.AbpProjectName.Tests.csproj" />
     <ProjectReference Include="..\..\src\AbpCompanyName.AbpProjectName.Web\AbpCompanyName.AbpProjectName.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Abp.AspNetCore.TestBase" Version="4.9.0" />
+    <PackageReference Include="Abp.AspNetCore.TestBase" Version="5.0.0" />
     <PackageReference Include="AngleSharp" Version="0.12.1" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,11 +3,9 @@ using Abp.AspNetCore;
 using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
-using AbpCompanyName.AbpProjectName.Web.Controllers;
 using Castle.MicroKernel.Registration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -20,7 +18,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
         {
             services.AddEntityFrameworkInMemoryDatabase();
 
-            services.AddMvc();
+            services.AddMvcCore();
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<AbpProjectNameWebTestModule>(options =>
@@ -38,13 +36,11 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             app.UseExceptionHandler("/Error");
 
             app.UseStaticFiles();
+            app.UseRouting();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}"
-                    );
+                routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
 
