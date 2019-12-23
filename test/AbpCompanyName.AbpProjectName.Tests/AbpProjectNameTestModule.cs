@@ -39,7 +39,7 @@ namespace AbpCompanyName.AbpProjectName.Tests
             );
 
             var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseInMemoryDatabase().UseInternalServiceProvider(serviceProvider);
+            builder.UseInMemoryDatabase("Test").UseInternalServiceProvider(serviceProvider);
 
             IocManager.IocContainer.Register(
                 Component
