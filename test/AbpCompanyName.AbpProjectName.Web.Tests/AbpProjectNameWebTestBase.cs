@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 using Abp.AspNetCore.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
+using AbpCompanyName.AbpProjectName.Web.Controllers;
+using AbpCompanyName.AbpProjectName.Web.Startup;
+using AbpCompanyName.AbpProjectName.Web.Tests.Controllers;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using Microsoft.AspNetCore.Hosting;
@@ -32,7 +36,8 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
         {
             return base
                 .CreateWebHostBuilder()
-                .UseContentRoot(ContentRootFolder.Value);
+                .UseContentRoot(ContentRootFolder.Value)
+                .UseSetting(WebHostDefaults.ApplicationKey, typeof(AbpProjectNameWebModule).Assembly.FullName);
         }
 
         #region Get response
