@@ -5,6 +5,7 @@ using Abp.Reflection.Extensions;
 using AbpCompanyName.AbpProjectName.Configuration;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 
 namespace AbpCompanyName.AbpProjectName.Web.Startup
@@ -37,6 +38,12 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameWebModule).GetAssembly());
+        }
+
+        public override void PostInitialize()
+        {
+            IocManager.Resolve<ApplicationPartManager>()
+                .AddApplicationPartsIfNotAddedBefore(typeof(AbpProjectNameWebModule).Assembly);
         }
     }
 }
