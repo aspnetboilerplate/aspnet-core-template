@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Version>1.0.0.0</Version>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <AssemblyName>AbpCompanyName.AbpProjectName.Core</AssemblyName>
     <PackageId>AbpCompanyName.AbpProjectName.Core</PackageId>
@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.13.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.5" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="Abp" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
