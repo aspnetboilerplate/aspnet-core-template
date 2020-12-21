@@ -15,6 +15,14 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     public class Startup
     {
+    
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        public Startup(IWebHostEnvironment env)
+        {
+            _hostingEnvironment = env;
+        }
+        
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //Configure DbContext
@@ -33,7 +41,11 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             {
                 //Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                    f => f.UseAbpLog4Net().WithConfig("log4net.config")
+                    f => f.UseAbpLog4Net().WithConfig(
+                        _hostingEnvironment.IsDevelopment()
+                            ? "log4net.config"
+                            : "log4net.Production.config"
+                        )
                 );
             });
         }
