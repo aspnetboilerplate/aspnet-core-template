@@ -22,7 +22,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.LanguageSele
                 CurrentUrl = Request.Path
             };
 
-            return View(model);
+            return await Task.FromResult(View(model));
         }
     }
 }
