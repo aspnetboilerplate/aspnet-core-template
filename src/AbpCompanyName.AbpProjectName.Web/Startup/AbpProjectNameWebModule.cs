@@ -18,7 +18,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
     {
         private readonly IConfigurationRoot _appConfiguration;
 
-        public AbpProjectNameWebModule(IHostingEnvironment env)
+        public AbpProjectNameWebModule(IWebHostEnvironment env)
         {
             _appConfiguration = AppConfigurations.Get(env.ContentRootPath, env.EnvironmentName);
         }

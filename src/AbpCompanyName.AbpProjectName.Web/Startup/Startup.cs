@@ -57,7 +57,6 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
