@@ -11,6 +11,8 @@ namespace AbpCompanyName.AbpProjectName
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
             AbpProjectNameLocalizationConfigurer.Configure(Configuration.Localization);
+            
+            Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = AbpProjectNameConsts.DefaultPassPhrase;
         }
 
         public override void Initialize()
