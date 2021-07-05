@@ -3,9 +3,12 @@
 @using AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.LanguageSelection
 @using AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.TopMenu
 @using Abp.Web.Security.AntiForgery
+@using Abp.CachedUniqueKeys
+@using Abp.AspNetCore.Mvc.Caching
 @inject IAbpAntiForgeryManager AbpAntiForgeryManager
 @using Abp.Web.Mvc.Alerts
 @inject IAlertManager AlertManager
+@inject ICachedUniqueKeyPerUser CachedUniqueKeyPerUser
 @{
     AbpAntiForgeryManager.SetCookie(Context);
 }
@@ -136,7 +139,7 @@
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
-    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(await CachedUniqueKeyPerUser.GetKeyAsync(GetScriptsResponsePerUserCache.CacheName))" type="text/javascript"></script>
 
     <!-- View specific scripts -->
 
