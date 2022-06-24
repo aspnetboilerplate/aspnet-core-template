@@ -41,8 +41,8 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
     <PackageReference Include="Castle.Core" Version="4.4.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="7.1.0" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="7.1.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="7.3.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="7.3.0" />
   </ItemGroup>
 
   <ItemGroup>
