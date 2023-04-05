@@ -15,14 +15,14 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     public class Startup
     {
-    
+
         private readonly IWebHostEnvironment _hostingEnvironment;
 
         public Startup(IWebHostEnvironment env)
         {
             _hostingEnvironment = env;
         }
-        
+
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //Configure DbContext
@@ -34,7 +34,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Startup
             services.AddControllersWithViews(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
-            }).AddNewtonsoftJson();
+            });
 
             //Configure Abp and Dependency Injection
             return services.AddAbp<AbpProjectNameWebModule>(options =>
