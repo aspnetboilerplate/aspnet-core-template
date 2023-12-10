@@ -13,7 +13,7 @@
     <LangVersion>7.2</LangVersion>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
     <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,16 +33,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
     <PackageReference Include="Castle.LoggingFacility.MsLogging" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
     <PackageReference Include="Castle.Core" Version="5.1.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="8.4.0" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="8.4.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>

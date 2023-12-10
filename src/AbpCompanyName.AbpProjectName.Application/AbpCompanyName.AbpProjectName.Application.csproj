@@ -9,7 +9,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>AbpCompanyName.AbpProjectName</RootNamespace>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="8.4.0" />
-    <PackageReference Include="Abp.AutoMapper" Version="8.4.0" />
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Abp.AutoMapper" Version="9.0.0" />
   </ItemGroup>
 
 </Project>
