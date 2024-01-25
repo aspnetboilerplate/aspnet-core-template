@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.1.0-preview20240125" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>

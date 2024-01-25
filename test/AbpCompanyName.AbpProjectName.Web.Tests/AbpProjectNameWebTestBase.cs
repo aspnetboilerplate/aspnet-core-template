@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Reflection;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Abp.AspNetCore.TestBase;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
 using AbpCompanyName.AbpProjectName.Tests.TestDatas;
-using AbpCompanyName.AbpProjectName.Web.Controllers;
 using AbpCompanyName.AbpProjectName.Web.Startup;
-using AbpCompanyName.AbpProjectName.Web.Tests.Controllers;
 using AngleSharp.Html.Dom;
 using AngleSharp.Html.Parser;
 using Microsoft.AspNetCore.Hosting;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Shouldly;
 
 namespace AbpCompanyName.AbpProjectName.Web.Tests
@@ -46,9 +42,9 @@ namespace AbpCompanyName.AbpProjectName.Web.Tests
             HttpStatusCode expectedStatusCode = HttpStatusCode.OK)
         {
             var strResponse = await GetResponseAsStringAsync(url, expectedStatusCode);
-            return JsonConvert.DeserializeObject<T>(strResponse, new JsonSerializerSettings
+            return JsonSerializer.Deserialize<T>(strResponse, new JsonSerializerOptions()
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
         }
 
