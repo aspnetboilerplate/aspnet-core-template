@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.1.0" />
-    <PackageReference Include="Abp.AutoMapper" Version="9.1.0" />
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.2.2" />
+    <PackageReference Include="Abp.AutoMapper" Version="9.2.2" />
   </ItemGroup>
 
 </Project>
