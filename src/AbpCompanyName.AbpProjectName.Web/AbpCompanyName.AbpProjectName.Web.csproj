@@ -39,10 +39,10 @@
     <PackageReference Include="Castle.LoggingFacility.MsLogging" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
     <PackageReference Include="Castle.Core" Version="5.1.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="9.4.0" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="9.4.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="9.4.1" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="9.4.1" />
   </ItemGroup>
 
   <ItemGroup>
