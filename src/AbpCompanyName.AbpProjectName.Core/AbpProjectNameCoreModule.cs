@@ -2,22 +2,21 @@
 using Abp.Reflection.Extensions;
 using AbpCompanyName.AbpProjectName.Localization;
 
-namespace AbpCompanyName.AbpProjectName
+namespace AbpCompanyName.AbpProjectName;
+
+public class AbpProjectNameCoreModule : AbpModule
 {
-    public class AbpProjectNameCoreModule : AbpModule
+    public override void PreInitialize()
     {
-        public override void PreInitialize()
-        {
-            Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+        Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
-            AbpProjectNameLocalizationConfigurer.Configure(Configuration.Localization);
-            
-            Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = AbpProjectNameConsts.DefaultPassPhrase;
-        }
+        AbpProjectNameLocalizationConfigurer.Configure(Configuration.Localization);
 
-        public override void Initialize()
-        {
-            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameCoreModule).GetAssembly());
-        }
+        Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = AbpProjectNameConsts.DefaultPassPhrase;
+    }
+
+    public override void Initialize()
+    {
+        IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameCoreModule).GetAssembly());
     }
 }

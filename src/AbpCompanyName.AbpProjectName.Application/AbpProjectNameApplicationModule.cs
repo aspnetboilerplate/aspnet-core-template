@@ -2,16 +2,15 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 
-namespace AbpCompanyName.AbpProjectName
+namespace AbpCompanyName.AbpProjectName;
+
+[DependsOn(
+    typeof(AbpProjectNameCoreModule),
+    typeof(AbpAutoMapperModule))]
+public class AbpProjectNameApplicationModule : AbpModule
 {
-    [DependsOn(
-        typeof(AbpProjectNameCoreModule), 
-        typeof(AbpAutoMapperModule))]
-    public class AbpProjectNameApplicationModule : AbpModule
+    public override void Initialize()
     {
-        public override void Initialize()
-        {
-            IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameApplicationModule).GetAssembly());
-        }
+        IocManager.RegisterAssemblyByConvention(typeof(AbpProjectNameApplicationModule).GetAssembly());
     }
 }

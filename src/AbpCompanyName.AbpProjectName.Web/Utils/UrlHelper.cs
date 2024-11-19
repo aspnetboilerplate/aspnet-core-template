@@ -12,7 +12,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Utils
             {
                 return true;
             }
-            
+
             if (UrlWithProtocolRegex.IsMatch(url))
             {
                 return true;
