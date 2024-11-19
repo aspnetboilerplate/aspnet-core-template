@@ -18,6 +18,8 @@
 
         let isEnabled: boolean;
 
+        let ignoreFeatureCheckForHostUsers: boolean;
+
         let tenantIdCookieName: string;
 
         function setTenantIdCookie(tenantId?: number): void;
@@ -55,6 +57,8 @@
             isDefault: boolean;
 
             isDisabled: boolean;
+            
+            isRightToLeft: boolean;
 
         }
 
@@ -74,13 +78,13 @@
 
         let defaultSourceName: string;
 
-        let values: { [key: string]: string };
+        let values: { [key: string]: { [key: string]: string } };
 
         let abpWeb: (key: string) => string;
 
         function localize(key: string, sourceName: string): string;
 
-        function getSource(sourceName: string): (key: string) => string;
+        function getSource(sourceName: string): (...key: string[]) => string;
 
         function isCurrentCulture(name: string): boolean;
     }
@@ -109,6 +113,19 @@
         function getToken(): string;
 
         function clearToken(): void;
+
+        let refreshTokenCookieName: string;
+
+        /**
+         * Saves refreshToken token.
+         * @param refreshToken The token to be saved.
+         * @param expireDate Optional expire date. If not specified, token will be deleted at end of the session.
+         */
+        function setRefreshToken(refreshToken: string, expireDate?: Date): void;
+
+        function getRefreshToken(): string;
+
+        function clearRefreshToken(): void;
     }
 
     namespace features {
@@ -200,7 +217,7 @@
             READ
         }
 
-        //TODO: We can extend this interface to define built-in notification types, like ILocalizableMessageNotificationData 
+        //TODO: We can extend this interface to define built-in notification types, like ILocalizableMessageNotificationData
         interface INotificationData {
 
             type: string;
@@ -293,18 +310,15 @@
 
         //TODO: these methods return jQuery.Promise instead of any. fix it.
 
-        function info(message: string, title?: string): any;
+        function info(message: string, title?: string, options?: any): any;
 
-        function success(message: string, title?: string): any;
+        function success(message: string, title?: string, options?: any): any;
 
-        function warn(message: string, title?: string): any;
+        function warn(message: string, title?: string, options?: any): any;
 
-        function error(message: string, title?: string): any;
+        function error(message: string, title?: string, options?: any): any;
 
-        function confirm(message: string, callback?: (result: boolean) => void): any;
-
-        function confirm(message: string, title?: string, callback?: (result: boolean) => void): any;
-
+        function confirm(message: string, title?: string, callback?: (isConfirmed: boolean, isCancelled?: boolean) => void, options?: any): any;
     }
 
     namespace ui {
@@ -359,11 +373,13 @@
         * This is a simple implementation created to be used by ABP.
         * Please use a complete cookie library if you need.
         * @param {string} key
-        * @param {string} value 
+        * @param {string} value
         * @param {Date} expireDate (optional). If not specified the cookie will expire at the end of session.
         * @param {string} path (optional)
+        * @param {string} domain (optional)
+        * @param {any} attributes (optional)
         */
-        function setCookieValue(key: string, value: string, expireDate?: Date, path?: string): void;
+        function setCookieValue(key: string, value: string, expireDate?: Date, path?: string, domain?: string, attributes?: any): void;
 
         /**
         * Gets a cookie with given key.
