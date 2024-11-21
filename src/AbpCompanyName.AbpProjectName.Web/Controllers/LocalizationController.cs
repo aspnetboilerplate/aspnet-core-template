@@ -1,6 +1,3 @@
-using System;
-using System.Globalization;
-using System.Linq;
 using Abp;
 using Abp.AspNetCore.Mvc.Controllers;
 using Abp.AspNetCore.Mvc.Extensions;
@@ -11,6 +8,9 @@ using Abp.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Globalization;
+using System.Linq;
 using IUrlHelper = Abp.Web.Http.IUrlHelper;
 
 namespace AbpCompanyName.AbpProjectName.Web.Controllers
@@ -55,7 +55,7 @@ namespace AbpCompanyName.AbpProjectName.Web.Controllers
             {
                 return LocalRedirect("/");
             }
-            
+
             var escapedReturnUrl = Uri.EscapeDataString(returnUrl);
             var localPath = _urlHelper.LocalPathAndQuery(escapedReturnUrl, Request.Host.Host, Request.Host.Port);
             if (!string.IsNullOrWhiteSpace(localPath))

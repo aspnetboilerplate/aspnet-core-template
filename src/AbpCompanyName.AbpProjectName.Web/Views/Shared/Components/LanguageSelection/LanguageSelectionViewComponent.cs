@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
-using Abp.Localization;
+﻿using Abp.Localization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AbpCompanyName.AbpProjectName.Web.Views.Shared.Components.LanguageSelection
 {
-    public class LanguageSelectionViewComponent: ViewComponent
+    public class LanguageSelectionViewComponent : ViewComponent
     {
         private readonly ILanguageManager _languageManager;
 

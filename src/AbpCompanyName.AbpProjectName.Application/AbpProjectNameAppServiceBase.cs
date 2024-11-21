@@ -1,15 +1,14 @@
 ﻿using Abp.Application.Services;
 
-namespace AbpCompanyName.AbpProjectName
+namespace AbpCompanyName.AbpProjectName;
+
+/// <summary>
+/// Derive your application services from this class.
+/// </summary>
+public abstract class AbpProjectNameAppServiceBase : ApplicationService
 {
-    /// <summary>
-    /// Derive your application services from this class.
-    /// </summary>
-    public abstract class AbpProjectNameAppServiceBase : ApplicationService
+    protected AbpProjectNameAppServiceBase()
     {
-        protected AbpProjectNameAppServiceBase()
-        {
-            LocalizationSourceName = AbpProjectNameConsts.LocalizationSourceName;
-        }
+        LocalizationSourceName = AbpProjectNameConsts.LocalizationSourceName;
     }
 }

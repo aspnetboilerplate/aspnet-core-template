@@ -11,8 +11,8 @@ using Microsoft.Extensions.Configuration;
 namespace AbpCompanyName.AbpProjectName.Web.Startup
 {
     [DependsOn(
-        typeof(AbpProjectNameApplicationModule), 
-        typeof(AbpProjectNameEntityFrameworkCoreModule), 
+        typeof(AbpProjectNameApplicationModule),
+        typeof(AbpProjectNameEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreModule))]
     public class AbpProjectNameWebModule : AbpModule
     {

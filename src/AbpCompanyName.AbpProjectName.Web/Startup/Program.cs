@@ -1,5 +1,5 @@
-﻿using System.IO;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace AbpCompanyName.AbpProjectName.Web.Startup
 {

@@ -1,5 +1,4 @@
-﻿using System;
-using Abp.AspNetCore;
+﻿using Abp.AspNetCore;
 using Abp.AspNetCore.TestBase;
 using Abp.Dependency;
 using AbpCompanyName.AbpProjectName.EntityFrameworkCore;
@@ -9,55 +8,55 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
 
-namespace AbpCompanyName.AbpProjectName.Web.Tests
+namespace AbpCompanyName.AbpProjectName.Web.Tests;
+
+public class Startup
 {
-    public class Startup
+    public IServiceProvider ConfigureServices(IServiceCollection services)
     {
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        services.AddEntityFrameworkInMemoryDatabase();
+
+        services.AddMvc();
+
+        //Configure Abp and Dependency Injection
+        return services.AddAbp<AbpProjectNameWebTestModule>(options =>
         {
-            services.AddEntityFrameworkInMemoryDatabase();
+            options.SetupTest();
+        });
+    }
 
-            services.AddMvc();
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+    {
+        UseInMemoryDb(app.ApplicationServices);
 
-            //Configure Abp and Dependency Injection
-            return services.AddAbp<AbpProjectNameWebTestModule>(options =>
-            {
-                options.SetupTest();
-            });
-        }
+        app.UseAbp(); //Initializes ABP framework.
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        app.UseExceptionHandler("/Error");
+
+        app.UseStaticFiles();
+        app.UseRouting();
+
+        app.UseEndpoints(endpoints =>
         {
-            UseInMemoryDb(app.ApplicationServices);
+            endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
 
-            app.UseAbp(); //Initializes ABP framework.
+    private void UseInMemoryDb(IServiceProvider serviceProvider)
+    {
+        var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
+        builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
+        var options = builder.Options;
 
-            app.UseExceptionHandler("/Error");
+        var iocManager = serviceProvider.GetRequiredService<IIocManager>();
 
-            app.UseStaticFiles();
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
-        }
-
-        private void UseInMemoryDb(IServiceProvider serviceProvider)
-        {
-            var builder = new DbContextOptionsBuilder<AbpProjectNameDbContext>();
-            builder.UseInMemoryDatabase(Guid.NewGuid().ToString()).UseInternalServiceProvider(serviceProvider);
-            var options = builder.Options;
-
-            var iocManager = serviceProvider.GetRequiredService<IIocManager>();
-
-            iocManager.IocContainer
-                .Register(
-                    Component.For<DbContextOptions<AbpProjectNameDbContext>>()
-                    .Instance(options)
-                    .LifestyleSingleton()
-                );
-        }
+        iocManager.IocContainer
+            .Register(
+                Component.For<DbContextOptions<AbpProjectNameDbContext>>()
+                .Instance(options)
+                .LifestyleSingleton()
+            );
     }
 }
