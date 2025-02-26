@@ -29,14 +29,14 @@
     <ProjectReference Include="..\AbpCompanyName.AbpProjectName.EntityFrameworkCore\AbpCompanyName.AbpProjectName.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.2" />
     <PackageReference Include="Castle.LoggingFacility.MsLogging" Version="3.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
     <PackageReference Include="Castle.Core" Version="5.1.1" />
-    <PackageReference Include="Abp.AspNetCore" Version="10.0.0" />
-    <PackageReference Include="Abp.Castle.Log4Net" Version="10.0.0" />
+    <PackageReference Include="Abp.AspNetCore" Version="10.1.0" />
+    <PackageReference Include="Abp.Castle.Log4Net" Version="10.1.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
