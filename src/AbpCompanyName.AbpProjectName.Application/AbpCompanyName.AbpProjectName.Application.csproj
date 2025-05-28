@@ -14,7 +14,7 @@
     <ProjectReference Include="..\AbpCompanyName.AbpProjectName.Core\AbpCompanyName.AbpProjectName.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="10.1.0" />
-    <PackageReference Include="Abp.AutoMapper" Version="10.1.0" />
+    <PackageReference Include="Abp.EntityFrameworkCore" Version="10.2.0" />
+    <PackageReference Include="Abp.AutoMapper" Version="10.2.0" />
   </ItemGroup>
 </Project>
